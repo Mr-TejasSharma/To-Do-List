@@ -1,0 +1,95 @@
+*{
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+}
+body{
+    height: 100vh;
+    background-image:url('Assets/background-desktop.jpg');
+    background-size:cover;
+    background-position: center left top;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.app{
+}
+.Entry{
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 25px;
+    padding: 1vh;
+}
+.data{
+    height: 5vh;
+    width:50vw;
+    border-radius: 25px;
+    padding: 5px;
+    outline: none;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left:1vw ;
+}
+.add{
+    background-color: blue;
+    color: aliceblue;
+    border-radius: 25px;
+    margin: 1vw;
+    font-size: large;
+    height: 6vh;
+    width: 6vh;
+    cursor: pointer;
+}
+.todo{
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 25px;
+    padding: 0vw 2vw;
+    max-height: 75vh;
+    overflow-y: scroll;
+}
+.todo::-webkit-scrollbar { 
+    display: none;
+}
+
+.list>li{
+    height: 5vh;
+    width:56vw;
+    border-radius: 25px;
+    margin-top: 5px;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding:2vw 0vw 0vw 2vw ;
+    background-color: aliceblue;
+}
+
+@media  screen and (max-width:425px) {
+    body{
+        background-image: url(Assets/background-phone.jpg);
+        background-size: cover;
+        background-position:bottom;
+        background-repeat: no-repeat;
+    }
+    form{
+        flex-direction: column;
+    }
+    .Entry{
+        background-color: rgba(0,0,0,0);
+    }
+    #input,#button{
+        padding: 2vw;
+        border-radius: 25px;
+        background-color: rgba(0,0,0,0.2);
+    }
+    #button{
+        padding-top: 0;
+        border-radius: 0px 0px 25px 25px;
+    }
+    .list>li{
+        width: 50vw;
+    }
+}
