@@ -18,18 +18,16 @@ form{
     justify-content: center;
     align-items: center;
 }
-.app{
-}
+
 .Entry{
     background-color: rgba(0,0,0,0.3);
     border-radius: 25px;
-    padding: 1vh;
+    padding: 8px;
 }
 .data{
-    height: 5vh;
-    width:50vw;
+    height: 7vh;
+    width:56vw;
     border-radius: 25px;
-    padding: 5px;
     outline: none;
     font-size: large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -39,7 +37,7 @@ form{
     background-color: blue;
     color: aliceblue;
     border-radius: 25px;
-    margin: 1vw;
+    margin-left: 1vw;
     font-size: large;
     height: 6vh;
     width: 6vh;
@@ -48,23 +46,36 @@ form{
 .todo{
     background-color: rgba(0,0,0,0.2);
     border-radius: 25px;
-    padding: 0vw 2vw;
+    padding: 0vw 20px;
     max-height: 75vh;
     overflow-y: scroll;
 }
 .todo::-webkit-scrollbar { 
     display: none;
 }
-
-.list>li{
+.todo>ul{
+    display: flex;
+    flex-direction: column;
+}
+.todo>ul>li{
     height: 5vh;
-    width:56vw;
+    width: 59vw;
     border-radius: 25px;
-    margin-top: 5px;
+    margin-bottom: 5px;
     font-size: large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    padding:2vw 0vw 0vw 2vw ;
     background-color: aliceblue;
+    padding:1%;
+    overflow-x: scroll;
+    text-align: left;
+}
+.todo>ul>li::-webkit-scrollbar{
+    display: none;
+}
+.clear{
+    height: 10vh;
+    width: 10vw;
+    background-color: red;
 }
 
 @media  screen and (max-width:425px) {
@@ -79,17 +90,24 @@ form{
     }
     .Entry{
         background-color: rgba(0,0,0,0);
+        width: 95vw;
     }
     #input,#button{
         padding: 2vw;
         border-radius: 25px;
         background-color: rgba(0,0,0,0.2);
     }
+    #input{
+        width: 90vw;
+    }
+    .data{
+        width: 89vw;
+    }
     #button{
         padding-top: 0;
         border-radius: 0px 0px 25px 25px;
     }
-    .list>li{
+    .todo>ul>li{
         width: 50vw;
     }
 }
