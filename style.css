@@ -1,113 +1,130 @@
-*{
-    padding: 0;
-    border: 0;
-    overflow: hidden;
+* {
+  padding: 0;
+  border: 0;
+  overflow: hidden;
 }
-body{
-    height: 100vh;
-    background-image:url('Assets/background-desktop.jpg');
-    background-size:cover;
-    background-position: center left top;
+body {
+  height: 100vh;
+  padding: 0px 50px;
+  background-image: url("Assets/background-desktop.jpg");
+  background-size: cover;
+  background-position: center left top;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Entry {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
+  padding: 8px;
+}
+.data {
+  height: 7vh;
+  width: 56vw;
+  border-radius: 25px;
+  outline: none;
+  font-size: large;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding-left: 1vw;
+}
+.add {
+  background-color: blue;
+  color: aliceblue;
+  border-radius: 25px;
+  margin-left: 1vw;
+  font-size: large;
+  height: 6vh;
+  width: 6vh;
+  cursor: pointer;
+}
+.todo {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  padding: 0vw 20px;
+  width: auto;
+  max-height: 65vh;
+  overflow-y: scroll;
+}
+.todo::-webkit-scrollbar {
+  display: none;
+}
+.todo > ul {
+}
+.todo > ul > li {
+  width: 58vw;
+  padding: 2vh 1vw;
+  border-radius: 25px;
+  margin-bottom: 5px;
+  font-size: larger;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: aliceblue;
+  overflow-x: scroll;
+  text-align: left;
+  color: rgb(0, 0, 0);
+}
+.todo > ul > li::-webkit-scrollbar {
+  display: none;
+}
+.todo > ul > img {
+  height: 4vh;
+}
+.box {
+  transform: scale(2);
+  margin: 0vw 2vw;
+  filter: drop-shadow(2px 2px 0px);
+}
+.todo > ul > li > input:checked + .work {
+  text-decoration: line-through;
+  text-decoration-thickness: 5px;
+  color: red;
+}
+.todo > ul > li > input:checked + .box {
+  filter: drop-shadow(0 0 0);
+}
+
+@media screen and (max-width: 425px) {
+  body {
+    background-image: url(Assets/background-phone.jpg);
+    background-size: cover;
+    background-position: bottom;
     background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.Entry{
-    background-color: rgba(0,0,0,0.3);
-    border-radius: 25px;
-    padding: 8px;
-}
-.data{
-    height: 7vh;
-    width:56vw;
-    border-radius: 25px;
-    outline: none;
-    font-size: large;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    padding-left:1vw ;
-}
-.add{
-    background-color: blue;
-    color: aliceblue;
-    border-radius: 25px;
-    margin-left: 1vw;
-    font-size: large;
-    height: 6vh;
-    width: 6vh;
-    cursor: pointer;
-}
-.todo{
-    background-color: rgba(0,0,0,0.2);
-    border-radius: 25px;
-    padding: 0vw 20px;
-    max-height: 75vh;
-    overflow-y: scroll;
-}
-.todo::-webkit-scrollbar { 
-    display: none;
-}
-.todo>ul{
-    display: flex;
+  }
+  form {
     flex-direction: column;
-}
-.todo>ul>li{
-    height: 5vh;
-    width: 59vw;
+  }
+  .Entry {
+    background-color: rgba(0, 0, 0, 0);
+    width: 95vw;
+  }
+  #input,
+  #button {
+    padding: 2vw;
     border-radius: 25px;
-    margin-bottom: 5px;
-    font-size: large;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: aliceblue;
-    padding:1%;
-    overflow-x: scroll;
-    text-align: left;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  #input {
+    width: 90vw;
+  }
+  .data {
+    width: 89vw;
+  }
+  #button {
+    padding-top: 0;
+    border-radius: 0px 0px 25px 25px;
+  }
+  .todo > ul > li {
+    width: 50vw;
+  }
 }
-.todo>ul>li::-webkit-scrollbar{
-    display: none;
-}
-.clear{
-    height: 10vh;
-    width: 10vw;
-    background-color: red;
-}
-
-@media  screen and (max-width:425px) {
-    body{
-        background-image: url(Assets/background-phone.jpg);
-        background-size: cover;
-        background-position:bottom;
-        background-repeat: no-repeat;
-    }
-    form{
-        flex-direction: column;
-    }
-    .Entry{
-        background-color: rgba(0,0,0,0);
-        width: 95vw;
-    }
-    #input,#button{
-        padding: 2vw;
-        border-radius: 25px;
-        background-color: rgba(0,0,0,0.2);
-    }
-    #input{
-        width: 90vw;
-    }
-    .data{
-        width: 89vw;
-    }
-    #button{
-        padding-top: 0;
-        border-radius: 0px 0px 25px 25px;
-    }
-    .todo>ul>li{
-        width: 50vw;
-    }
+.clear {
+  position: absolute;
+  top: 0;
+  background-color: red;
 }
